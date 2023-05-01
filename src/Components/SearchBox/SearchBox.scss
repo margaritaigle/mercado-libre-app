@@ -4,10 +4,11 @@
     width: auto;
     display: flex;
     justify-content: center;
-    gap: 15px;
     align-items: center;
-    height: 5vh;
+    gap: 25px;
+    height: 45px;
     background-color: $background-color-yellow;
+    margin-bottom: 10px;
 
     .ml-logo {
         height: 30px;
@@ -20,13 +21,11 @@
     flex-direction: row;
     margin: 0px;
 
-
-
     input {
         border: none;
         border-radius: 2px 0px 0px 2px;
         padding-left: 10px;
-        width: 500px;
+        width: 70vw;
         height: 25px;
     }
 

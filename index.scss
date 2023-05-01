@@ -1,0 +1,9 @@
+@import "./src/variables.scss";
+
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Roboto;
+    background-color: $background-color-grey-light;
+}
