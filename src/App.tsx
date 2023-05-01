@@ -1,8 +1,11 @@
+import { SearchBox } from "./Components/SearchBox/SearchBox";
 
 function App() {
-  return <>
-  <h1>Mercado Libre App</h1>
-  </>;
+  return (
+    <>
+      <SearchBox />
+    </>
+  );
 }
 
 export default App;
