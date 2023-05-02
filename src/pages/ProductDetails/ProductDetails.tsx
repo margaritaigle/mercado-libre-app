@@ -35,10 +35,9 @@ export const ProductDescription = () => {
         </section>
         <section className="product-details-container">
           <span>
-            {`${
-              productDetails?.condition.charAt(0).toUpperCase() +
-              productDetails?.condition.slice(1)
-            } - ${productDetails?.sold_quantity} vendidos`}
+            {`${productDetails?.condition === "new" ? "Nuevo" : "Usado"} - ${
+              productDetails?.sold_quantity
+            } vendidos`}
           </span>
           <h3>{productDetails?.title}</h3>
           <h1>
