@@ -1,13 +1,14 @@
 @import "../../variables.scss";
 
 .product-card-container {
-    width: 80%;
-    height: 150px;
+    width: 70%;
+    height: 135px;
     background-color: $color-white;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0px auto 0px auto;
+    padding-top: 10px;
     display: grid;
     grid-gap: 15px;
+    grid-template-columns: 150px auto 15%;
     grid-template-areas:
         "img desc city";
 
@@ -28,12 +29,13 @@
 
         span {
             font-size: 20px;
+            font-weight: bold;
         }
 
         p {
             line-height: 20px;
             word-wrap: break-word;
-            width: 50vw;
+            width: 45vw;
             margin: 0px;
         }
 
@@ -44,7 +46,8 @@
     }
 
     .city {
-        padding-top: 30px;
+        padding: 30px 0px 0px 0px;
+        width: min-content;
         grid-area: city;
         height: min-content;
         text-align: start;
@@ -53,10 +56,11 @@
     }
 
     hr {
-        width: 95%;
+        width: 98%;
         color: $background-color-grey-dark;
         opacity: 0.1;
         grid-column: 1/4;
+        margin: 0px auto 0px auto;
     }
 
 }

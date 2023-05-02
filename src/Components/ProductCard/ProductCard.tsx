@@ -8,7 +8,8 @@ export const ProductCard = ({ productData }: { productData: any }) => {
       <section>
         <span>
           <Link to={`./${productData?.id}`}>
-            $ {Math.round(productData?.price).toLocaleString()}
+            {productData?.currency_id === "UYU" ? "$" : "U$S"}{" "}
+            {Math.round(productData?.price).toLocaleString()}
           </Link>
         </span>
         <p>

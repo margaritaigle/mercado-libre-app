@@ -1,0 +1,60 @@
+@import "../../variables.scss";
+
+.product-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 65%;
+    margin: 0px auto 0px auto;
+    font-family: Roboto;
+    text-align: left;
+    background-color: $color-white;
+    border-radius: 4px;
+
+    .product-description-container {
+        width: auto;
+        padding-left: 25px;
+        img {
+            width: 200px;
+        }
+
+        p {
+            font-size: 12px;
+            width: auto;
+            color: $background-color-grey-dark
+        }
+    }
+
+    .product-details-container {
+        display: flex;
+        flex-direction: column;
+        min-width: 200px;
+        margin-top: 20px;
+        span {
+            font-size: 11px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h3 {
+            word-wrap: break-word;
+            font-size: 16px;
+            padding-right: 15px;
+            margin-top: 10px;
+        }
+        h1 {
+            margin: 0;
+        }
+
+        button {
+            background-color: rgb(52, 131, 250);
+            border: none;
+            border-radius: 3px;
+            color: $color-white;
+            font-family: Roboto;
+            width: 90%;
+            margin-top: 15px;
+            height: 30px;
+            cursor: pointer;
+        }
+    }
+}

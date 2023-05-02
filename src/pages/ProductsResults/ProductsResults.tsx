@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { ProductCard } from "../components/ProductCard/ProductCard";
-import { fetchData } from "../api/api";
-import { SearchBox } from "../components/SearchBox/SearchBox";
-import { URLS } from "../api/urls";
+import { ProductCard } from "../../components/ProductCard/ProductCard";
+import { fetchData } from "../../api/api";
+import { SearchBox } from "../../components/SearchBox/SearchBox";
+import { URLS } from "../../api/urls";
 import { useLocation } from "react-router-dom";
 
 export const ProductsResults = () => {
