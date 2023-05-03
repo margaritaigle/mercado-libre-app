@@ -2,12 +2,16 @@ import { useEffect, useState } from "react";
 import { URLS } from "../../api/urls";
 import { fetchData } from "../../api/api";
 import { useParams } from "react-router-dom";
-import { SearchBox } from "../../components/SearchBox/SearchBox";
 import "./ProductDetails.scss";
+import {
+  IProductDescription,
+  IProductDetail,
+} from "./ProductDetails.interface";
 
 export const ProductDescription = () => {
-  const [productDetails, setProductDetails] = useState<any>();
-  const [productDescription, setProductDescription] = useState<any>();
+  const [productDetails, setProductDetails] = useState<IProductDetail>();
+  const [productDescription, setProductDescription] =
+    useState<IProductDescription>();
 
   const { id } = useParams();
   useEffect(() => {
@@ -25,7 +29,6 @@ export const ProductDescription = () => {
   }, []);
   return (
     <>
-      <SearchBox />
       <div className="product-container">
         <section className="product-description-container">
           <img src={productDetails?.pictures[0].url} />
@@ -42,7 +45,7 @@ export const ProductDescription = () => {
           <h3>{productDetails?.title}</h3>
           <h1>
             {productDetails?.currency_id}{" "}
-            {Math.round(productDetails?.price).toLocaleString()}
+            {Math.round(productDetails?.price || 0).toLocaleString()}
           </h1>
           <button>Comprar</button>
         </section>

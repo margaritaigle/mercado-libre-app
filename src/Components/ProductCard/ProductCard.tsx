@@ -1,7 +1,8 @@
+import { IProductData } from "../../pages/ProductsResults/ProductResults.interface";
 import "./ProductCard.scss";
 import { Link } from "react-router-dom";
 
-export const ProductCard = ({ productData }: { productData: any }) => {
+export const ProductCard = ({ productData }: { productData: IProductData }) => {
   return (
     <div className="product-card-container">
       <img src={productData?.thumbnail} />

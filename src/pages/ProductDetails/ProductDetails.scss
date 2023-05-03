@@ -3,8 +3,8 @@
 .product-container {
     display: flex;
     flex-direction: row;
-    gap: 15px;
     justify-content: space-between;
+    gap: 15px;
     width: 65%;
     margin: 0px auto 0px auto;
     font-family: Roboto;
@@ -47,7 +47,7 @@
         }
 
         button {
-            background-color: rgb(52, 131, 250);
+            background-color: $background-color-blue;
             border: none;
             border-radius: 3px;
             color: $color-white;
