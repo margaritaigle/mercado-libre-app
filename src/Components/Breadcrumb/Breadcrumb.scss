@@ -1,0 +1,14 @@
+.category-breadcrumb {
+    margin: 0px 0px 10px 0px;
+    padding: 0px;
+    width: 70%;
+}
+
+.category-breadcrumb li {
+    display: inline-block;
+
+    span {
+        margin-left: 5px;
+        font-size: 12px;
+    }
+}

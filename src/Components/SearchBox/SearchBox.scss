@@ -11,8 +11,7 @@
     margin-bottom: 10px;
 
     .ml-logo {
-        height: 30px;
-        width: auto;
+        cursor: pointer;
     }
 }
 
@@ -38,7 +37,6 @@
         outline: none;
     }
 
-
     .btn {
         background-color: $background-color-grey-light;
         display: flex;
@@ -49,11 +47,6 @@
         cursor: pointer;
         border: none;
         border-radius: 0px 2px 2px 0px;
-
-        img {
-            height: auto;
-            width: 15px;
-        }
     }
 
 }

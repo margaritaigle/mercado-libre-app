@@ -3,12 +3,23 @@ import { ProductCard } from "../../components/ProductCard/ProductCard";
 import { fetchData } from "../../api/api";
 import { URLS } from "../../api/urls";
 import { useLocation } from "react-router-dom";
-import { IProductData } from "./ProductResults.interface";
+import { IProductData, Result } from "./ProductResults.interface";
+import "./ProductResults.scss";
+import { Breadcrumb } from "../../components/Breadcrumb/Breadcrumb";
 
 export const ProductsResults = () => {
   const { search } = useLocation();
   const searchParams = new URLSearchParams(search);
-  const [productsData, setProductsData] = useState<IProductData[]>([]);
+  const [productsData, setProductsData] = useState<IProductData>();
+  const getPathsFromRoot = () => {
+    if (productsData?.filters.length)
+      return productsData?.filters[0].values[0].path_from_root;
+    else {
+      return [];
+    }
+  };
+
+  const pathsFromRoot = getPathsFromRoot();
 
   useEffect(() => {
     const url = URLS.GET_PRODUCTS_LIST.replace(
@@ -16,15 +27,16 @@ export const ProductsResults = () => {
       searchParams.toString()
     );
     fetchData(url).then((data) => {
-      setProductsData(data.results);
+      setProductsData(data);
     });
-  }, [search.toString()]);
+  }, [search]);
 
   return (
-    <>
-      {productsData?.map((productData: IProductData) => (
+    <div className="products-results-container">
+      <Breadcrumb pathsFromRoot={pathsFromRoot} />
+      {productsData?.results.map((productData: Result) => (
         <ProductCard productData={productData} key={productData?.id} />
       ))}
-    </>
+    </div>
   );
 };

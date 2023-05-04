@@ -23,7 +23,15 @@ export const SearchBox = () => {
   return (
     <>
       <header className="search-box-container">
-        <img src={LogoML} className="ml-logo" />
+        <img
+          height={30}
+          src={LogoML}
+          className="ml-logo"
+          onClick={() => {
+            navigate("/");
+            setSearchValue("");
+          }}
+        />
         <form className="search-box" onSubmit={handleSubmit}>
           <input
             placeholder="Nunca dejes de buscar"
@@ -32,7 +40,7 @@ export const SearchBox = () => {
             value={searchValue}
           />
           <button className="magnifying-glass btn" type="submit">
-            <img src={MagnifyingGlass} />
+            <img src={MagnifyingGlass} width={15} alt="meli-logo" />
           </button>
         </form>
       </header>

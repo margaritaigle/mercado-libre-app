@@ -1,7 +1,7 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { SearchBox } from "./components/SearchBox/SearchBox";
 import { ProductsResults } from "./pages/ProductsResults/ProductsResults";
-import { ProductDescription } from "./pages/ProductDetails/ProductDetails";
+import { ProductDetail } from "./pages/ProductDetails/ProductDetails";
 import "./App.scss";
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<SearchBox />}>
           <Route path="items" element={<ProductsResults />} />
-          <Route path="items/:id" element={<ProductDescription />} />
+          <Route path="items/:id" element={<ProductDetail />} />
         </Route>
       </Routes>
     </BrowserRouter>

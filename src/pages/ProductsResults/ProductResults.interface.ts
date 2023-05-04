@@ -1,9 +1,59 @@
 export interface IProductData {
+    site_id:                   string;
+    country_default_time_zone: string;
+    query:                     string;
+    paging:                    Paging;
+    results:                   Result[];
+    sort:                      Sort;
+    available_sorts:           Sort[];
+    filters:                   Filter[];
+    available_filters:         AvailableFilter[];
+}
+
+export interface AvailableFilter {
+    id:     string;
+    name:   string;
+    type:   string;
+    values: AvailableFilterValue[];
+}
+
+export interface AvailableFilterValue {
+    id:      string;
+    name:    string;
+    results: number;
+}
+
+export interface Sort {
+    id:   string;
+    name: string;
+}
+
+export interface Filter {
+    id:     string;
+    name:   string;
+    type:   string;
+    values: FilterValue[];
+}
+
+export interface FilterValue {
+    id:             string;
+    name:           string;
+    path_from_root: Sort[];
+}
+
+export interface Paging {
+    total:           number;
+    primary_results: number;
+    offset:          number;
+    limit:           number;
+}
+
+export interface Result {
     id:                  string;
     title:               string;
     condition:           string;
     thumbnail_id:        string;
-    catalog_product_id:  null | string;
+    catalog_product_id:  string;
     listing_type_id:     string;
     permalink:           string;
     buying_mode:         string;
@@ -14,7 +64,7 @@ export interface IProductData {
     currency_id:         string;
     order_backend:       number;
     price:               number;
-    original_price:      number | null;
+    original_price:      null;
     sale_price:          null;
     sold_quantity:       number;
     available_quantity:  number;
@@ -22,20 +72,18 @@ export interface IProductData {
     use_thumbnail_id:    boolean;
     accepts_mercadopago: boolean;
     tags:                string[];
-    variation_filters?:  string[];
     shipping:            Shipping;
     stop_time:           Date;
     seller:              Seller;
     seller_address:      SellerAddress;
     address:             Address;
     attributes:          Attribute[];
-    variations_data?:    VariationsData;
     installments:        null;
     winner_item_id:      null;
+    catalog_listing:     boolean;
     discounts:           null;
     promotions:          any[];
     inventory_id:        null;
-    catalog_listing?:    boolean;
 }
 
 export interface Address {
@@ -48,12 +96,12 @@ export interface Address {
 export interface Attribute {
     id:                   string;
     name:                 string;
-    value_id:             string;
-    value_name:           string;
+    value_id:             null | string;
+    value_name:           null | string;
     attribute_group_id:   AttributeGroupID;
     attribute_group_name: AttributeGroupName;
     value_struct:         Struct | null;
-    values:               Value[];
+    values:               AttributeValue[];
     source:               number;
     value_type:           ValueType;
 }
@@ -77,9 +125,9 @@ export enum ValueType {
     String = "string",
 }
 
-export interface Value {
-    id:     string;
-    name:   string;
+export interface AttributeValue {
+    id:     null | string;
+    name:   null | string;
     struct: Struct | null;
     source: number;
 }
@@ -105,26 +153,9 @@ export interface Eshop {
     eshop_status_id:  number;
     site_id:          string;
     eshop_experience: number;
-    eshop_rubro:      EshopRubro | null;
-    eshop_locations:  EshopLocation[];
+    eshop_rubro:      null;
+    eshop_locations:  any[];
     eshop_logo_url:   string;
-}
-
-export interface EshopLocation {
-    neighborhood: NeighborhoodClass;
-    state:        NeighborhoodClass;
-    city:         NeighborhoodClass;
-    country:      NeighborhoodClass;
-}
-
-export interface NeighborhoodClass {
-    id: null | string;
-}
-
-export interface EshopRubro {
-    category_id: string;
-    id:          string;
-    name:        string;
 }
 
 export interface SellerReputation {
@@ -142,9 +173,15 @@ export interface Metrics {
 }
 
 export interface Cancellations {
-    period: Period;
-    rate:   number;
-    value:  number;
+    period:    Period;
+    rate:      number;
+    value:     number;
+    excluded?: Excluded;
+}
+
+export interface Excluded {
+    real_value: number;
+    real_rate:  number;
 }
 
 export enum Period {
@@ -176,14 +213,9 @@ export interface SellerAddress {
     id:           null;
     latitude:     null;
     longitude:    null;
-    country:      SellerAddressCity;
-    state:        SellerAddressCity;
-    city:         SellerAddressCity;
-}
-
-export interface SellerAddressCity {
-    id:   string;
-    name: string;
+    country:      Sort;
+    state:        Sort;
+    city:         Sort;
 }
 
 export interface Shipping {
@@ -193,15 +225,4 @@ export interface Shipping {
     mode:          string;
     tags:          string[];
     promise:       null;
-}
-
-export interface VariationsData {
-    "60943737606": The60943737606;
-}
-
-export interface The60943737606 {
-    thumbnail:    string;
-    ratio:        string;
-    name:         string;
-    pictures_qty: number;
 }
