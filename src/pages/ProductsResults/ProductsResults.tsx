@@ -14,9 +14,6 @@ export const ProductsResults = () => {
   const getPathsFromRoot = () => {
     if (productsData?.filters.length)
       return productsData?.filters[0].values[0].path_from_root;
-    else {
-      return [];
-    }
   };
 
   const pathsFromRoot = getPathsFromRoot();

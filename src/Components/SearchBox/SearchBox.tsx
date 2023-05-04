@@ -16,8 +16,12 @@ export const SearchBox = () => {
     navigate({ pathname: "/items", search: `${createSearchParams(params)}` });
   };
 
-  const handleChange = (ev: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (ev: React.ChangeEvent<HTMLInputElement>) =>
     setSearchValue(ev.target.value);
+
+  const handleClick = () => {
+    navigate("/");
+    setSearchValue("");
   };
 
   return (
@@ -27,10 +31,7 @@ export const SearchBox = () => {
           height={30}
           src={LogoML}
           className="ml-logo"
-          onClick={() => {
-            navigate("/");
-            setSearchValue("");
-          }}
+          onClick={handleClick}
         />
         <form className="search-box" onSubmit={handleSubmit}>
           <input

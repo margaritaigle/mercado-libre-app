@@ -27,7 +27,7 @@
         padding-left: 25px;
 
         p {
-            font-size: 12px;
+            font-size: 14px;
             width: auto;
             color: $background-color-grey-dark
         }
@@ -53,6 +53,13 @@
 
         h1 {
             margin: 0;
+            font-size: 25px;
+
+            span {
+                vertical-align: super;
+                margin-left: 5px;
+                font-size: 14px;
+            }
         }
 
         button {

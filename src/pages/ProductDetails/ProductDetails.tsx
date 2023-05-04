@@ -56,7 +56,7 @@ export const ProductDetail = () => {
           <Breadcrumb pathsFromRoot={pathFromRoot} />
           <div className="product-content">
             <section className="product-description-container">
-              <img src={pictures && pictures[0].url} alt={title} />
+              <img src={pictures && pictures[0].url} alt={title} width={400} />
 
               <h2>
                 {productDescription?.plain_text && "Descripción del producto"}
@@ -71,7 +71,10 @@ export const ProductDetail = () => {
               </span>
               <h3>{title}</h3>
               <h1>
-                {currency_id} {Math.round(price || 0).toLocaleString()}
+                {currency_id} {(price || 0).toLocaleString()}
+                <span>
+                  {(price || "0").toLocaleString().split(",")[1] || "00"}
+                </span>
               </h1>
               <button>Comprar</button>
             </section>

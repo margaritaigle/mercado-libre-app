@@ -1,3 +1,5 @@
+@import "../../variables.scss";
+
 .category-breadcrumb {
     margin: 0px 0px 10px 0px;
     padding: 0px;
@@ -6,9 +8,9 @@
 
 .category-breadcrumb li {
     display: inline-block;
-
+    color: $background-color-grey-darker;
     span {
         margin-left: 5px;
-        font-size: 12px;
+        font-size: 14px;
     }
 }
