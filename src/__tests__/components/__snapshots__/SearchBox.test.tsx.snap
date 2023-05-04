@@ -1,0 +1,34 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Testing SearchBox > Should match snapshot 1`] = `
+<div>
+  <header
+    class="search-box-container"
+  >
+    <img
+      class="ml-logo"
+      height="30"
+      src="/src/assets/Logo_ML.png"
+    />
+    <form
+      class="search-box"
+    >
+      <input
+        placeholder="Nunca dejes de buscar"
+        type="text"
+        value=""
+      />
+      <button
+        class="magnifying-glass btn"
+        type="submit"
+      >
+        <img
+          alt="meli-logo"
+          src="/src/assets/ic_Search.png"
+          width="15"
+        />
+      </button>
+    </form>
+  </header>
+</div>
+`;
