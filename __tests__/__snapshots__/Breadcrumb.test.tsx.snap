@@ -1,0 +1,23 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Testing <Breadcrumb /> > Should match snapshot 1`] = `
+<div>
+  <ul
+    class="category-breadcrumb"
+  >
+    <li>
+      <span>
+        Test 1
+      </span>
+      <span>
+         &gt;
+      </span>
+    </li>
+    <li>
+      <span>
+        Test 2
+      </span>
+    </li>
+  </ul>
+</div>
+`;
