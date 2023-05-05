@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { vitest } from "vitest";
 import { MemoryRouter, createSearchParams } from "react-router-dom";
-import { SearchBox } from "../components/SearchBox/SearchBox";
+import { SearchBox } from "../components/ProductCard/SearchBox/SearchBox";
 
 const mockedUseNavigate = vitest.fn();
 
