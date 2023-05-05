@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import { Breadcrumb } from "../../components/Breadcrumb/Breadcrumb";
+import { Breadcrumb } from "../components/Breadcrumb/Breadcrumb";
 
 const pathsFromRoot = [
   { name: "Test 1", id: "123" },

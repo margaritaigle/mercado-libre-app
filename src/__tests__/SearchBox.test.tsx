@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import { SearchBox } from "../../components/SearchBox/SearchBox";
 import { vitest } from "vitest";
 import { MemoryRouter, createSearchParams } from "react-router-dom";
+import { SearchBox } from "../components/SearchBox/SearchBox";
 
 const mockedUseNavigate = vitest.fn();
 
@@ -11,7 +11,7 @@ vitest.mock("react-router-dom", () => ({
   Outlet: () => <></>,
 }));
 
-const params = {q: "Test"}
+const params = { q: "Test" };
 describe("Testing SearchBox", () => {
   test("Should match snapshot", () => {
     const container = render(
